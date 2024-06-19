@@ -69,11 +69,11 @@ module sys_top
 
 `else
 	//////////// VGA ///////////
-//	output  [5:0] VGA_R,
-//	output  [5:0] VGA_G,
-//	output  [5:0] VGA_B,
-//	inout         VGA_HS,
-//	output		  VGA_VS,
+	//output  [5:0] VGA_R,
+	//output  [5:0] VGA_G,
+	//output  [5:0] VGA_B,
+   inout         VGA_HS,
+	output		  VGA_VS,
 	input         VGA_EN,  // active low
 
 	/////////// AUDIO //////////
@@ -88,11 +88,11 @@ module sys_top
 
 	//////////// I/O ///////////
 //	output        LED_USER,
-//	output        LED_HDD,
-//	output        LED_POWER,
-//	input         BTN_USER,
-//	input         BTN_OSD,
-//	input         BTN_RESET,
+	output        LED_HDD,
+	output        LED_POWER,
+	//input         BTN_USER,
+	input         BTN_OSD,
+	input         BTN_RESET,
 `endif
 
 	////////// I/O ALT /////////
