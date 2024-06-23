@@ -1,3 +1,8 @@
+-=(N64_Senhor notes)=-
+
+Tested: Working Video 720p, 1080p & Sound
+
+Changes besides the rest of the files have been made to rtl/sdram.sv & N64.sv
 
 ## Hardware Requirements
 SDRAM of any size is required.
