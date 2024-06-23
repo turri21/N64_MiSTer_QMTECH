@@ -163,7 +163,7 @@ wire SD_CS, SD_CLK, SD_MOSI, SD_MISO, SD_CD;
 `endif
 */
 
-//Senhor: Issue: Distorted colors - Fix: Most of 1'bZ assignments have been changed to 1'b1.
+//Senhor: -Issue- Distorted colors. -Fix- All 1'bZ assigns changed to 1'b1.
 	
 //////////////////////  Secondary SD  ///////////////////////////////////
 wire SD_CS, SD_CLK, SD_MOSI, SD_MISO, SD_CD;
@@ -171,7 +171,7 @@ wire SD_CS, SD_CLK, SD_MOSI, SD_MISO, SD_CD;
 `ifndef MISTER_DUAL_SDRAM
 	assign SD_CD       = mcp_en ? mcp_sdcd : SDCD_SPDIF;
 	assign SD_MISO     = SD_CD | (mcp_en ? SD_SPI_MISO : (VGA_EN | SDIO_DAT[0]));
-	assign SD_SPI_CS   = mcp_en ?  (mcp_sdcd  ? 1'b1 : SD_CS) : (sog & ~cs1 & ~VGA_EN) ? 1'b1 : 1'bZ;
+	assign SD_SPI_CS   = mcp_en ?  (mcp_sdcd  ? 1'b1 : SD_CS) : (sog & ~cs1 & ~VGA_EN) ? 1'b1 : 1'b1;
 	assign SD_SPI_CLK  = (~mcp_en | mcp_sdcd) ? 1'b1 : SD_CLK;
 	assign SD_SPI_MOSI = (~mcp_en | mcp_sdcd) ? 1'b1 : SD_MOSI;
 	assign {SDIO_CLK,SDIO_CMD,SDIO_DAT} = av_dis ? 6'b111111 : (mcp_en | (SDCD_SPDIF & ~SW[2])) ? {vga_g,vga_r,vga_b} : {SD_CLK,SD_MOSI,SD_CS,3'b111};
