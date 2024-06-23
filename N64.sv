@@ -129,12 +129,12 @@ module emu
 
 	//SDRAM interface with lower latency
 	output        SDRAM_CLK,
-	output        SDRAM_CKE,
+	//output        SDRAM_CKE,
 	output [12:0] SDRAM_A,
 	output  [1:0] SDRAM_BA,
 	inout  [15:0] SDRAM_DQ,
-	output        SDRAM_DQML,
-	output        SDRAM_DQMH,
+	//output        SDRAM_DQML,
+	//output        SDRAM_DQMH,
 	output        SDRAM_nCS,
 	output        SDRAM_nCAS,
 	output        SDRAM_nRAS,
@@ -182,11 +182,14 @@ assign LED_DISK  = 0;
 assign LED_POWER = 0;
 assign VGA_SCALER= 0;
 
-assign ADC_BUS  = 'Z;
+//Senhor: Disabling it to stop interference.
+//assign ADC_BUS  = 'Z;
 
 assign {UART_RTS, UART_TXD, UART_DTR} = 0;
-assign {SD_SCK, SD_MOSI, SD_CS} = 'Z;
-assign {SDRAM_DQ, SDRAM_A, SDRAM_BA, SDRAM_CLK, SDRAM_CKE, SDRAM_DQML, SDRAM_DQMH, SDRAM_nWE, SDRAM_nCAS, SDRAM_nRAS, SDRAM_nCS} = 'Z;
+
+//Senhor: Disabling it to stop interference.
+//assign {SD_SCK, SD_MOSI, SD_CS} = 'Z;
+//assign {SDRAM_DQ, SDRAM_A, SDRAM_BA, SDRAM_CLK, SDRAM_CKE, SDRAM_DQML, SDRAM_DQMH, SDRAM_nWE, SDRAM_nCAS, SDRAM_nRAS, SDRAM_nCS} = 'Z;
 
 assign FB_BASE    = video_FB_base;
 assign FB_EN      = status[105];
