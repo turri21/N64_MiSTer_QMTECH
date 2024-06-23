@@ -163,6 +163,8 @@ wire SD_CS, SD_CLK, SD_MOSI, SD_MISO, SD_CD;
 `endif
 */
 
+//Senhor: Issue: Distorted colors - Fix: All 1'bZ assignments have been changed to 1'b1.
+	
 //////////////////////  Secondary SD  ///////////////////////////////////
 wire SD_CS, SD_CLK, SD_MOSI, SD_MISO, SD_CD;
 
