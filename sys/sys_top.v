@@ -258,7 +258,7 @@ always @(posedge FPGA_CLK2_50) begin
 	if(div > 100000) div <= 0;
 
 	if(!div) begin
-		deb_user <= {deb_user[6:0], btn_u | ~KEY[0]};  //MiSTer: ~KEY[1] Senhor: Buttons are switched for convenience.
+		deb_user <= {deb_user[6:0], btn_u | ~KEY[0]}; //MiSTer: ~KEY[1] Senhor: Buttons are switched for convenience.
 		if(&deb_user) btn_user <= 1;
 		if(!deb_user) btn_user <= 0;
 
